@@ -1,0 +1,26 @@
+loginPage:
+  label_web: "//*[@class='login_logo']"
+  field_user_name: "//input[@id='user-name']"
+  field_password: "//input[@id='password']"
+  login_button: "//*[@id='login-button']"
+  login_credentials_section: "//*[@id='login_credentials']"
+  error_message: "//*[@data-test='error-button']"
+
+HomePage:
+  label_home: "//*[contains(text(),'Swag Labs')]"
+  add_cart_button: "//*[@id='add-to-cart-sauce-labs-backpack']"
+  remove_button: "//*[@id='remove-sauce-labs-backpack']"
+  badge_icon: "//*[@data-test='shopping-cart-badge']"
+  cart: "//*[@data-test='shopping-cart-link']"
+  item_added: "//*[@data-test='inventory-item-name']"
+
+SideBar:
+  open_bar: "//*[@id='react-burger-menu-btn']"
+  about_bar: "//*[@data-test='about-sidebar-link']"
+  all_item_bar: "//*[@data-test='inventory-sidebar-link']"
+  logout_bar: "//*[@data-test='logout-sidebar-link']"
+  reset_bar: "//*[@data-test='reset-sidebar-link']"
+  close_bar: "//*[@data-test='close-menu']"
+
+about_menu:
+  icon_web: "//*[@alt='Saucelabs']"
