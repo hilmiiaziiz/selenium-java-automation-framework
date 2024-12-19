@@ -11,10 +11,10 @@ The project is required:
 
 Step to setup and run the scenario from the Git:
 - Open the Intellij IDE and clone the project from the Git, wait untill indexing is complete
-- Go to the status bar and select "Run", then select the feature file to run.
+- Go to the status bar and select "Run", then select the feature file to run
 
 Step to setup and run the scenario from the Git:
 - Import open the project from the IDE then choose the folder that include the project
-- Go to the status bar and select "Run", then select the feature file to run.
+- Go to the status bar and select "Run", then select the feature file to run
 
 `The project is created in intellij IDE, so it is recommended to carry out the setup process using the same IDE`
