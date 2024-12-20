@@ -31,7 +31,7 @@ public class products {
 //        System.out.println(response.asString());
     }
 
-    @Then("^verify value of the (.*) is equals with(.*)$")
+    @Then("^verify value of the (.*) is equals with (.*)$")
     public void verifyTheParameterData(String path, String cat) {
 
         JsonPath jsnpath = response.jsonPath();
