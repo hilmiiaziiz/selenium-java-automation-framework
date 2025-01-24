@@ -10,6 +10,8 @@ import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
@@ -19,9 +21,12 @@ public class products {
     public RequestSpecification httpRequest;
     public Response response;
     public int ResponseCode;
+    public static String responseBody;
 
     public ResponseBody body;
     public JSONObject params;
+    public JSONObject requestParams;
+
 
     @When("^GET The (.*) Request$")
     public void hitTheUrl(String endpoint) {
@@ -47,9 +52,9 @@ public class products {
     }
 
     @Given("^Pointing The URL (.*)$")
-    public void hitTheApiWithPostCondition(String url) {
+    public void hitTheApiWithPostCondition(String loc) throws InterruptedException, IOException {
 
-        RestAssured.baseURI = url;
+        RestAssured.baseURI = helper.getCreds(loc);
     }
 
     @Given("^Create Product data Payload with title (.*)")
@@ -63,12 +68,22 @@ public class products {
         params.put("image", "google.com");
         params.put("category", "clothes");
     }
+
+
     @Given("^POST (.*) The Request$")
     public void postTheRequest(String endpoint){
         httpRequest.body(params.toJSONString());
         response = httpRequest.post(endpoint);
         body = response.getBody();
         System.out.println(response.asString());
+
     }
 
+    @Given("^PUT (.*) The Request$")
+    public void putTheRequest(String endpoint){
+
+        httpRequest = RestAssured.given();
+        response = httpRequest.put(endpoint);
+        System.out.println(response.getStatusCode());
+    }
 }
